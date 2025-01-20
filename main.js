@@ -3,6 +3,7 @@ $(document).ready(function () {
     let table = document.getElementById("table");
     let seeonlyword = document.getElementById("see_only_word");
     let seeonlymeaning = document.getElementById("see_only_meaning");
+    let seeboth = document.getElementById("see_both");
     let mix = document.getElementById("mix");
     let words = [];
     inputfile.addEventListener('change', (e) => {
@@ -11,6 +12,7 @@ $(document).ready(function () {
     })
     seeonlyword.addEventListener('click',showOnlyWord);
     seeonlymeaning.addEventListener('click',showOnlyMeaning);
+    seeboth.addEventListener('click',showBothWordAndMeaning);
     mix.addEventListener('click',mixWords);
     function generateWord(file) {
         let reader = new FileReader();
@@ -67,11 +69,20 @@ $(document).ready(function () {
     function showOnlyMeaning() {
         const tds = document.getElementsByTagName("td");
         for (let i = 0; i < tds.length; i++) {
-            console.log(words[i / 2]);
             if (i % 2 == 1) {
                 tds[i].innerText = words[(i - 1) / 2].meaning;
             } else {
                 tds[i].innerText = '';
+            }
+        }
+    }
+    function showBothWordAndMeaning(){
+        const tds = document.getElementsByTagName("td");
+        for (let i = 0; i < tds.length; i++) {
+            if (i % 2 == 0) {
+                tds[i].innerText = words[i / 2].word;
+            } else {
+                tds[i].innerText = words[(i - 1) / 2].meaning;
             }
         }
     }
