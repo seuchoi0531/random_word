@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./main.js"></script>
     <link rel="stylesheet" href="main.css">
     <title>다너짱~</title>
 </head>
 
-<body>
+<body onselectstart="return false" oncontextmenu="return false">
     <div id="wrap">
         <div id="option_area">
             <input id="input_file" type="file">
@@ -18,6 +19,8 @@
             <button id="see_only_meaning">see only meaning</button>
             <button id="see_both">see both</button>
             <button id="mix">mix</button>
+            <button id="isDrag">drag on/off</button>
+            <button id="toPDF">save to pdf</button>
         </div>
         <div id="table"></div>
     </div>
