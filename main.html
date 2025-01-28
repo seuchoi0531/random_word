@@ -13,16 +13,25 @@
 <body onselectstart="return false" oncontextmenu="return false">
     <div id="wrap">
         <div id="option_area">
-            <input id="input_file" type="file">
-            <button id="add_word">add word</button>
-            <button id="see_only_word">see only word</button>
-            <button id="see_only_meaning">see only meaning</button>
-            <button id="see_both">see both</button>
-            <button id="mix">mix</button>
-            <button id="isDrag">drag on/off</button>
-            <button id="toPDF">save to pdf</button>
+            <div id="button_area">
+                <input id="input_file" type="file" multiple>
+                <button id="add_file">add file</button>
+                <button id="delete_file">delete file</button>
+                <button id="see_only_word">see only word</button>
+                <button id="see_only_meaning">see only meaning</button>
+                <button id="see_both">see both</button>
+                <button id="mix">mix</button>
+                <button id="isDrag">drag on/off</button>
+                <button id="toPDF">save to pdf</button>
+            </div>
+            <div id="hidden_area">
+            </div>
         </div>
+    </div>
+    <div id="main">
+        <div id="bookmark_area"></div>
         <div id="table"></div>
+    </div>
     </div>
 </body>
 

@@ -1,29 +1,51 @@
-table, tr, td {
+
+table,
+tr,
+td {
     border-collapse: collapse;
     border: 1px black solid;
-    font-size: 20px;
     font-weight: bold;
 }
+tr {
+    font-size: 20px;
+}
+
 #wrap {
     margin: 0 auto;
     width: 700px;
 }
+#input_file{
+    display: none;
+}
+#main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
 #table {
+    width: 100%;
     display: flex;
     justify-content: center;
 }
-table{
-    margin-top: 100px;
+
+table {
+    border: 0;
     width: 80%;
 }
-.boldborder{
+
+.boldborder {
     border-top: 3px black solid;
 }
+
 .oddtr {
     background-color: rgb(169, 246, 220);
 }
-#option_area{
+
+#option_area {
     position: fixed;
+    display: flex;
+    flex-direction: column;
     top: 0;
     left: 0;
     width: 100%;
@@ -32,6 +54,31 @@ table{
     z-index: 20px;
     background-color: white;
 }
-td{
+#button_area {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-grow: 1;
+    z-index: 20px;
+}
+#hidden_area {
+    /*display: none;*/
+    flex-grow: 1;
+}
+
+td {
     width: 25%;
+}
+
+button{
+    width: 130px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: #d9d9d9;
+    border: 0;
+}
+
+button:active{
+    background-color: #b0b0b0;
 }
