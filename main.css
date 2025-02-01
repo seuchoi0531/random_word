@@ -4,6 +4,7 @@ table {
 tr,
 td {
     border: 1px black solid;
+    letter-spacing: -1px;
 }
 
 tr {

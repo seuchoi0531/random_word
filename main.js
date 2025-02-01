@@ -23,7 +23,7 @@ $(document).ready(function () {
         margin: [50, 0, 50, 0],
         filename: 'output.pdf',
         html2canvas: { dpi: 192, letterRendering: true },
-        jsPDF: { unit: 'px', format: [pageWidth, pageHeight] },
+        jsPDF: { unit: 'px', format: [742.46212, 1050] },
         pagebreak: {
             avoid: 'tr',
             mode: ['avoid-all', 'css', 'legacy']
