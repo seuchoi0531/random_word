@@ -1,11 +1,11 @@
-
-table,
+table {
+    border-collapse: collapse;
+}
 tr,
 td {
-    border-collapse: collapse;
     border: 1px black solid;
-    font-weight: bold;
 }
+
 tr {
     font-size: 20px;
 }
@@ -14,15 +14,18 @@ tr {
     margin: 0 auto;
     width: 700px;
 }
-#input_file{
+
+#input_file {
     display: none;
 }
+
 #main {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 100px;
 }
+
 #table {
     width: 100%;
     display: flex;
@@ -54,6 +57,7 @@ table {
     z-index: 20px;
     background-color: white;
 }
+
 #button_area {
     display: flex;
     justify-content: space-evenly;
@@ -61,6 +65,7 @@ table {
     flex-grow: 1;
     z-index: 20px;
 }
+
 #hidden_area {
     /*display: none;*/
     flex-grow: 1;
@@ -70,7 +75,7 @@ td {
     width: 25%;
 }
 
-button{
+button {
     width: 130px;
     height: 30px;
     margin-top: 10px;
@@ -79,6 +84,6 @@ button{
     border: 0;
 }
 
-button:active{
+button:active {
     background-color: #b0b0b0;
 }

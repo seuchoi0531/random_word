@@ -1,6 +1,7 @@
 $(document).ready(function () {
     const fontsize = "20px";
     //const pdffontsize = "12px";
+    //const wordNumPerPage = 35;
     let inputfile = document.getElementById("input_file");
     let table = document.getElementById("table");
     //let bookmarkarea = document.getElementById("bookmark_area");
@@ -14,16 +15,21 @@ $(document).ready(function () {
     let isDrag = document.getElementById("isDrag");
     let body = document.getElementsByTagName("body")[0];
     let toPDF = document.getElementById("toPDF");
+    let scale = window.devicePixelRatio || 1;
     let filename = [];
     const pageHeight = 900;
     const options = {
-        margin: [10, 0, 10, 0],
+        margin: [1, 0, 1, 0],
         filename: 'output.pdf',
         html2canvas: { dpi: 192, letterRendering: true },
-        jsPDF: { unit: 'mm', format: 'a4' },
+        jsPDF: { unit: 'cm', format: 'letter' },
         pagebreak: {
+            avoid: 'tr',
+            mode: ['avoid-all', 'css', 'legacy']
+            /*
             mode: 'css',  // CSS로 페이지 분할 처리
             before: '.pagebreak'  // `pagebreak` 클래스를 가진 요소에서 페이지 분할
+            */
         }
     };
     let isDragable = false;
@@ -205,16 +211,31 @@ $(document).ready(function () {
         isDragable = !isDragable;
     }
     function saveToPDF() {
-        const trs = document.getElementsByTagName("tr");
-        let sum = 0;
-        for (let i = 0; i < trs.length; i++) {
-            console.log(trs[i].innerHTML);
-            if (sum + trs[i].offsetHeight > pageHeight) {
-                trs[i].classList.add("pagebreak");
-                sum = 0;
-            } else
-                sum += trs[i].offsetHeight;
-        }
+        // const trs = document.getElementsByTagName("tr");
+        // let sum = 0;
+        // scale = window.devicePixelRatio || 1;
+        
+        // for (let i = 0; i < trs.length; i++) {
+        //     console.log(trs[i].innerHTML);
+        //     if((i - 34) % 35 == 0)
+        //         trs[i].classList.add("pagebreak");
+        //     /*
+        //     if (sum + trs[i].getBoundingClientRect().height * scale > pageHeight) {
+        //         trs[i].classList.add("pagebreak");
+        //         sum = 0;
+        //     } else
+        //         sum += trs[i].getBoundingClientRect().height * scale;
+        //     */
+
+        //     /*
+        //     if (sum + trs[i].offsetHeight > pageHeight) {
+        //         trs[i].classList.add("pagebreak");
+        //         sum = 0;
+        //     } else
+        //         sum += trs[i].offsetHeight;
+        //     */
+        // }
+        
         html2pdf().from(table).set(options).save();
         //html2pdf(table);
     }
