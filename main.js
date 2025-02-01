@@ -17,12 +17,13 @@ $(document).ready(function () {
     let toPDF = document.getElementById("toPDF");
     let scale = window.devicePixelRatio || 1;
     let filename = [];
-    const pageHeight = 900;
+    const pageWidth = 742.46212;
+    const pageHeight = 1050;
     const options = {
-        margin: [1, 0, 1, 0],
+        margin: [50, 0, 50, 0],
         filename: 'output.pdf',
         html2canvas: { dpi: 192, letterRendering: true },
-        jsPDF: { unit: 'cm', format: 'letter' },
+        jsPDF: { unit: 'px', format: [pageWidth, pageHeight] },
         pagebreak: {
             avoid: 'tr',
             mode: ['avoid-all', 'css', 'legacy']
@@ -162,7 +163,7 @@ $(document).ready(function () {
     }
     function selectAllFile() {
         const selectedFiles = document.querySelectorAll('input[name="file"]:not(:checked)');
-        Array.from(selectedFiles).forEach((file)=>{
+        Array.from(selectedFiles).forEach((file) => {
             file.checked = true;
         })
     }
@@ -214,7 +215,7 @@ $(document).ready(function () {
         // const trs = document.getElementsByTagName("tr");
         // let sum = 0;
         // scale = window.devicePixelRatio || 1;
-        
+
         // for (let i = 0; i < trs.length; i++) {
         //     console.log(trs[i].innerHTML);
         //     if((i - 34) % 35 == 0)
@@ -235,7 +236,7 @@ $(document).ready(function () {
         //         sum += trs[i].offsetHeight;
         //     */
         // }
-        
+
         html2pdf().from(table).set(options).save();
         //html2pdf(table);
     }
