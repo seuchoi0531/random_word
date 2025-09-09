@@ -115,8 +115,8 @@ $(document).ready(function () {
     Array.from(tds).forEach((td, i) => {
       td.addEventListener("click", () => {
         if (td.innerText == "") {
-          if (i % 2 == 0 && words.length > i / 2) td.innerText = words[i / 2].word;
-          else if (i % 2 == 1 && words.length > (i - 1) / 2) td.innerText = words[(i - 1) / 2].meaning;
+          if (i % 2 == 0 && words.length > i / 2) td.innerHTML = words[i / 2].word;
+          else if (i % 2 == 1 && words.length > (i - 1) / 2) td.innerHTML = words[(i - 1) / 2].meaning;
         } else td.innerText = "";
       });
     });
@@ -172,7 +172,7 @@ $(document).ready(function () {
     const tds = document.getElementsByTagName("td");
     for (let i = 0; i < tds.length; i++) {
       if (words.length > i / 2) {
-        if (i % 2 == 0) tds[i].innerText = words[i / 2].word;
+        if (i % 2 == 0) tds[i].innerHTML = words[i / 2].word;
         else tds[i].innerText = "";
       }
     }
@@ -181,7 +181,7 @@ $(document).ready(function () {
     const tds = document.getElementsByTagName("td");
     for (let i = 0; i < tds.length; i++) {
       if (words.length > i / 2) {
-        if (i % 2 == 1) tds[i].innerText = words[(i - 1) / 2].meaning;
+        if (i % 2 == 1) tds[i].innerHTML = words[(i - 1) / 2].meaning;
         else tds[i].innerText = "";
       }
     }
@@ -190,8 +190,8 @@ $(document).ready(function () {
     const tds = document.getElementsByTagName("td");
     for (let i = 0; i < tds.length; i++) {
       if (words.length > i / 2) {
-        if (i % 2 == 0) tds[i].innerText = words[i / 2].word;
-        else tds[i].innerText = words[(i - 1) / 2].meaning;
+        if (i % 2 == 0) tds[i].innerHTML = words[i / 2].word;
+        else tds[i].innerHTML = words[(i - 1) / 2].meaning;
       }
     }
   }
